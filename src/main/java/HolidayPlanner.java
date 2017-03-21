@@ -35,9 +35,10 @@ public class HolidayPlanner {
     }
 
     public void printableArray(){
+        System.out.println("Your planned route:");
         for(Location location : routeList){
-            System.out.println("name: " + location.getName() + "; priorityCounter: " + location.getCounter()
-                    + "; relation: " + location.getRelation());
+            System.out.println(" location name: " + location.getName()+ "; relation: " + location.getRelation() + "; priorityCounter: " + location.getCounter()
+                    );
 
         }
     }
