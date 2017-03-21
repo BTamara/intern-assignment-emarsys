@@ -11,18 +11,29 @@ public class HolidayPlanner {
     private ArrayList<Location> routeList = new ArrayList<Location>();
 
     public ArrayList<Location> routePlanner(Location location){
-        if(location.getId() == null){
-            location.setId(1);
+
+        location.setCounter(1);
+        routeList.add(location);
+
+        for (Location i : routeList){
+            if(i.getRelation() == location.getName()){
+                location.setCounter(i.getId()-1);
+
+            }
+
         }
 
-        routeList.add(location);
+
+
         Collections.sort(routeList, new IdComparator());
         return routeList;
     }
 
     public void printableArray(){
         for(Location location : routeList){
-            System.out.println("name: " + location.getName() + "; id: " + location.getId());
+            System.out.println("name: " + location.getName() + "; id: " + location.getId()
+                    + "; relation: " + location.getRelation());
+
         }
     }
 }
