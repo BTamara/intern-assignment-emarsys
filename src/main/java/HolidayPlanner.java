@@ -16,7 +16,7 @@ public class HolidayPlanner {
 
         routeList.add(location);
 
-        if(routeList.size() < 1){
+        if(routeList.isEmpty()){
             throw new ThereIsNotAtLeastOneLocation("For planning a route need at least one destination");
         }
         if(routeList.size() == 1){
