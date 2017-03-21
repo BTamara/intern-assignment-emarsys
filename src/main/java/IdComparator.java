@@ -8,7 +8,7 @@ import java.util.Comparator;
 public class IdComparator implements Comparator<Location> {
 
     public int compare(Location loc1, Location loc2){
-        return loc1.getId().compareTo(loc2.getId());
+        return loc1.getCounter().compareTo(loc2.getCounter());
 
     }
 }

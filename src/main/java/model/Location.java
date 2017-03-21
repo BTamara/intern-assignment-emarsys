@@ -1,14 +1,12 @@
 package model;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 /**
  * Created by bt on 2017.03.21..
  */
 public class Location {
 
     private String name;
-    private Integer counter;
+    private Integer counter = 0;
     private String relation;
 
     public void setName(String name){
@@ -21,17 +19,16 @@ public class Location {
         return name;
     }
 
-    public void setCounter(Integer counter) {
-        if(counter!= null){
-            this.counter = counter;
-
-        }else{
-            this.counter = counter;
-
-        }
+    public void setCounter() {
+        counter --;
     }
 
-    public Integer getId(){
+    public void setCounter(Integer counter) {
+        this.counter = counter;
+    }
+
+
+    public Integer getCounter(){
 
         return counter;
     }

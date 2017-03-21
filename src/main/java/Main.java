@@ -1,4 +1,3 @@
-import com.sun.deploy.util.StringUtils;
 import model.Location;
 
 /**
@@ -16,7 +15,7 @@ public class Main {
         Location location5 = new Location();
         Location location6 = new Location();
 
-        location1.setName("UUU");
+        /*location1.setName("UUU");
         location2.setName("VVV");
         location3.setName("WWW");
         location4.setName("XXX");
@@ -29,9 +28,9 @@ public class Main {
         location4.setRelation(location1);   //x => u
         location5.setRelation(location2);   //y => v
         location6.setRelation(null);        //z =>
+        */
 
-
-        /*location1.setName("AAA");
+        location1.setName("AAA");
         location2.setName("BBB");
         location3.setName("CCC");
         location4.setName("DDD");
@@ -44,7 +43,7 @@ public class Main {
         location4.setRelation(location6);       //DDD => FFF
         location5.setRelation(location6);       //EEE => FFF
         location6.setRelation(location2);       //FFF => BBB
-        */
+
 
 
         HolidayPlanner routeList = new HolidayPlanner();

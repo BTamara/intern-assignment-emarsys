@@ -12,18 +12,23 @@ public class HolidayPlanner {
 
     public ArrayList<Location> routePlanner(Location location){
 
-        location.setCounter(1);
         routeList.add(location);
 
-        for (Location i : routeList){
-            if(i.getRelation() == location.getName()){
-                location.setCounter(i.getId()-1);
 
-            }
+        for (int i = 0; i < routeList.size(); i++){
+            for (int j = 0; j < routeList.size(); j++)
+                {
+                    if (routeList.get(i).getRelation() == routeList.get(j).getName()) {
+
+                        if(routeList.get(j).getCounter() >= routeList.get(i).getCounter()){
+                            routeList.get(j).setCounter(routeList.get(i).getCounter()-1);
+                        }else{
+                            routeList.get(j).setCounter();
+                        }
+                    }
+                }
 
         }
-
-
 
         Collections.sort(routeList, new IdComparator());
         return routeList;
@@ -31,7 +36,7 @@ public class HolidayPlanner {
 
     public void printableArray(){
         for(Location location : routeList){
-            System.out.println("name: " + location.getName() + "; id: " + location.getId()
+            System.out.println("name: " + location.getName() + "; priorityCounter: " + location.getCounter()
                     + "; relation: " + location.getRelation());
 
         }
