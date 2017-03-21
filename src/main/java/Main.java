@@ -1,5 +1,8 @@
 import model.Location;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by bt on 2017.03.21..
  */
@@ -8,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        HolidayPlanner routeList = new HolidayPlanner();
+        HolidayPlanner holidayPlanner = new HolidayPlanner();
 
         Location location1 = new Location("UUU");
         Location location2 = new Location("VVV");
@@ -24,13 +27,10 @@ public class Main {
         location5.setRelation(location2);   //y => v
         location6.setRelation(null);        //z =>
 
-        routeList.routePlanner(location1);
-        routeList.routePlanner(location2);
-        routeList.routePlanner(location3);
-        routeList.routePlanner(location4);
-        routeList.routePlanner(location5);
-        routeList.routePlanner(location6);
-        routeList.printableArray();
+        ArrayList<Location> allLocation = new ArrayList<Location>(Arrays.asList(location1, location2, location3, location4,location5, location6));
+        holidayPlanner.routePlanner(allLocation);
+        holidayPlanner.sortTheLocations(allLocation);
+        holidayPlanner.printableArray(allLocation);
 
     }
 }

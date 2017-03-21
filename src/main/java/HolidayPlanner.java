@@ -12,9 +12,7 @@ public class HolidayPlanner {
 
     private ArrayList<Location> routeList = new ArrayList<Location>();
 
-    public ArrayList<Location> routePlanner(Location location) throws Exception {
-
-        routeList.add(location);
+    public ArrayList<Location> routePlanner(ArrayList<Location> routeList) throws Exception {
 
         if(routeList.isEmpty()){
             throw new ThereIsNotAtLeastOneLocation("For planning a route need at least one destination");
@@ -35,12 +33,16 @@ public class HolidayPlanner {
                     }
                 }
         }
-
-        Collections.sort(routeList, new IdComparator());
         return routeList;
     }
 
-    public void printableArray(){
+    public ArrayList<Location> sortTheLocations(ArrayList<Location> routeList){
+        Collections.sort(routeList, new IdComparator());
+        return  routeList;
+
+    }
+
+    public void printableArray(ArrayList<Location> routeList){
         System.out.println("Your planned route:");
         for(Location location : routeList){
             System.out.println(" location name: " + location.getName()+ "; relation: " + location.getRelation() + "; priorityCounter: " + location.getCounter()
