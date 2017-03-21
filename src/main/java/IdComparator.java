@@ -11,7 +11,7 @@ public class IdComparator implements Comparator<Location> {
         if(loc1.getCounter() == loc2.getCounter()){
             loc1.setCounter();
         }
-        return loc1.getCounter().compareTo(loc2.getCounter());
+        return loc2.getCounter().compareTo(loc1.getCounter());
 
 
 

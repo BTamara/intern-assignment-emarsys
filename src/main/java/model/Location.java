@@ -20,7 +20,7 @@ public class Location {
     }
 
     public void setCounter() {
-        counter --;
+        counter ++;
     }
 
     public void setCounter(Integer counter) {

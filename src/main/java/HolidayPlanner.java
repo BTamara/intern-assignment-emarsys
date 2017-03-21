@@ -20,8 +20,8 @@ public class HolidayPlanner {
                 {
                     if (routeList.get(i).getRelation() == routeList.get(j).getName()) {
 
-                        if(routeList.get(j).getCounter() >= routeList.get(i).getCounter()){
-                            routeList.get(j).setCounter(routeList.get(i).getCounter()-1);
+                        if(routeList.get(j).getCounter() <= routeList.get(i).getCounter()){
+                            routeList.get(j).setCounter(routeList.get(i).getCounter()+1);
                         }else{
                             routeList.get(j).setCounter();
                         }
