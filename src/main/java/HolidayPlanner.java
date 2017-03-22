@@ -42,12 +42,14 @@ public class HolidayPlanner {
 
     }
 
-    public void printableArray(ArrayList<Location> routeList){
+    public String printableArray(ArrayList<Location> routeList){
+        String result = null;
         System.out.println("Your planned route:");
         for(Location location : routeList){
-            System.out.println(" location name: " + location.getName()+ "; relation: " + location.getRelation() + "; priorityCounter: " + location.getCounter()
-                    );
+            result = " location name: " + location.getName()+ "; relation: "
+                    + location.getRelation() + "; priorityCounter: " + location.getCounter();
 
-        }
+            System.out.println(result);
+        }return  result;
     }
 }
